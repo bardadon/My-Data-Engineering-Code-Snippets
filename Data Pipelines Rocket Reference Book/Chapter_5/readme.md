@@ -1,8 +1,4 @@
-# Chapter 5 - Loading Data
-
-The author of the book is using Amazon Redshift. He is connecting his s3 bucket to redshift to transfer data between them.
-
-I should do the same using Google bucket and Google BigQuery(Check if its free in the free tier).
+# Loading Data - Prerequisites and Introduction
 
 Lets see how to pull data from google Big Query
 
@@ -27,7 +23,7 @@ bigquery_client.create_dataset(table='test_dataset')
 
 Now to create a table, grab the project id:
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ca812d04-6854-403d-9997-b53132315c1a/Untitled.png)
+![Untitled(42)](https://user-images.githubusercontent.com/65648983/194718655-74340949-140f-4f1c-a803-01b2530fe8b6.png)
 
 And add it like this: <ProjectId>.<DataSet>.<NewTableName>
 
@@ -77,7 +73,7 @@ Notes:
 1. Grab the table id according to what is shown above.
 2. uri  —> Go to the bucket, click on the csv file and copy the URL.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0b136f6f-b474-4604-af01-6555b25e1be9/Untitled.png)
+![Untitled(43)](https://user-images.githubusercontent.com/65648983/194718695-cf5025d8-d48b-432c-8664-f3adf4413728.png)
 
 1. Make sure that the datatypes are suitable for what is in the CSV file.
 
@@ -125,5 +121,5 @@ print("Loaded {} rows.".format(destination_table.num_rows))
 ```
 
 End result
+![Untitled(45)](https://user-images.githubusercontent.com/65648983/194718724-14a89c08-fb47-481e-9d34-e63e90dd161c.png)
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/68c9c3e9-9d3d-405a-a5b2-3a198a22a8ac/Untitled.png)
