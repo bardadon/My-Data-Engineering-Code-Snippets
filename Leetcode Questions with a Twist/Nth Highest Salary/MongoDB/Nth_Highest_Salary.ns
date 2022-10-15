@@ -1,0 +1,24 @@
+db.employee.aggregate([{
+  "$sort": {
+    "salary": -1
+  }
+},{
+  "$limit": 2
+},{
+  "$project": {
+    "_id": 0,
+    "salary": 1
+  }
+},{
+  "$group": {
+    "_id": {},
+    "Nth_Highest_Salary": {
+      "$min": "$salary"
+    }
+  }
+},{
+  "$project": {
+    "Nth_Highest_Salary": 1,
+    "_id": 0
+  }
+}])
