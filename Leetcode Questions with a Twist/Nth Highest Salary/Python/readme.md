@@ -40,7 +40,7 @@ def Nth_Highest_Salary(n):
 print(Nth_Highest_Salary(2))
 ```
 
-### Solution - From Scratch
+### Solution - From Scratch(Insertion Sort)
 ```
 import pandas as pd
 df = pd.read_csv('employee.csv')
