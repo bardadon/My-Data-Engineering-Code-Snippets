@@ -42,6 +42,10 @@ print(Nth_Highest_Salary(2))
 
 ### Solution - From Scratch
 ```
+import pandas as pd
+df = pd.read_csv('employee.csv')
+nums = df.Salary.to_list()
+
 def nth_highest_number(nums, n):
     n = n - 1
     
