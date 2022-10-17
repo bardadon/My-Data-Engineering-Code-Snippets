@@ -26,5 +26,20 @@ values
 commit;
 ```
 ### Solution
-
+```
+select 
+	a1.player_id,
+    min(a1.event_date) as first_login
+from activity as a1
+group by a1.player_id;
+```
 ### Output
+```
++-----------+-------------+
+| player_id | first_login |
++-----------+-------------+
+| 1         | 2016-03-01  |
+| 2         | 2017-06-25  |
+| 3         | 2016-03-02  |
++-----------+-------------+
+```
