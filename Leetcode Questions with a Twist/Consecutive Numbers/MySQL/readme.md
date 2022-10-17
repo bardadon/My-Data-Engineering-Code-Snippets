@@ -9,6 +9,8 @@ insert into Logs (id, num) values ('4', '2');
 insert into Logs (id, num) values ('5', '1');
 insert into Logs (id, num) values ('6', '2');
 insert into Logs (id, num) values ('7', '2');
+insert into Logs (id, num) values ('8', '2');
+insert into Logs (id, num) values ('9', '1');
 ```
 ### Solution
 ```
