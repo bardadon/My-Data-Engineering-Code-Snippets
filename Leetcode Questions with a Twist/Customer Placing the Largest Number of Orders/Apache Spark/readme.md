@@ -30,7 +30,7 @@ select *
 from orders
 ''')
 ```
-### Solution
+### Solution - SparkSQL - SQL
 ```
 from pyspark.sql import SparkSession
 
@@ -59,6 +59,26 @@ def customer_orders():
 
 results.show()
 ```
+### Solution - SparkSQL - Functions
+```
+from pyspark.sql import SparkSession
+
+def customers_orders(df):
+    
+    # Create a spark session, a spark dataframe and a temporary view
+    spark = SparkSession.builder.appName('Customer Orders').getOrCreate()
+    df = spark.createDataFrame(data=df)
+    df.createOrReplaceTempView('orders')
+    
+    # Query the data
+    temp = df.select(df[1]).groupby(df[1]).count()
+    results = temp.select(temp[0]).orderBy(temp[1], ascending=0).limit(num=1)
+    return results.show()
+
+customers_orders(df)
+```
+
+
 ### Output
 ```
 +---------------+
