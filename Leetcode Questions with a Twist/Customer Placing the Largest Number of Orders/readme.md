@@ -1,6 +1,6 @@
 ## Question: Customer Placing the Largest Number of Orders
 
-``
+```
 Table: Orders
 
 +-----------------+----------+
@@ -11,7 +11,7 @@ Table: Orders
 +-----------------+----------+
 order_number is the primary key for this table.
 This table contains information about the order ID and the customer ID.
-``
+```
  
 
 __Write an SQL query to find the customer_number for the customer who has placed the largest number of orders.__
@@ -21,7 +21,7 @@ The test cases are generated so that exactly one customer will have placed more 
 The query result format is in the following example.
 
  
-``
+```
 Example 1:
 
 Input: 
@@ -43,4 +43,4 @@ Output:
 Explanation: 
 The customer with number 3 has two orders, which is greater than either customer 1 or 2 because each of them only has one order. 
 So the result is customer_number 3.
-``
+```
