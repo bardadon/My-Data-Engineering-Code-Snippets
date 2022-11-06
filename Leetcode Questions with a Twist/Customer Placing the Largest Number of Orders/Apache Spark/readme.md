@@ -34,7 +34,7 @@ from orders
 ```
 from pyspark.sql import SparkSession
 
-def customer_orders():
+def customer_orders(df):
     
     # Create a spark session, a spark dataframe and a temporary view
     spark = SparkSession.builder.appName('Customer Orders').getOrCreate()
@@ -55,9 +55,9 @@ def customer_orders():
 
     # Return results
     results = spark.sql(query)
-    return results
+    return results.show()
 
-results.show()
+customer_orders(df)
 ```
 ### Solution - SparkSQL - Functions
 ```
