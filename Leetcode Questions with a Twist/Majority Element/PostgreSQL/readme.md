@@ -7,7 +7,7 @@ docker-compose up -d
 ### Run the DAG
 - Go to localhost:8080/ and run the dag.
 
-![Screenshot 2022-11-10 151916](https://user-images.githubusercontent.com/65648983/201102299-9971b255-c728-4563-80aa-6355106d40d0.png)
+![Screenshot 2022-11-10 152107](https://user-images.githubusercontent.com/65648983/201102655-cf511aad-b26c-4a2e-afed-3043e6a8ff82.png)
 
 
 ### The Data
