@@ -1,18 +1,14 @@
 ### Deploy Pipeline
-
+- Run
 ```
 docker-compose up -d
 ```
-Go to localhost:8080/
 
 ### Run the DAG
-```
-docker exec -it majorityelement_airflow-scheduler_1 bash
+- Go to localhost:8080/ and run the dag.
 
-airflow@fbdff0ccc162:/opt/airflow$ airflow dags unpause majorityElement
+![Screenshot 2022-11-10 151916](https://user-images.githubusercontent.com/65648983/201102299-9971b255-c728-4563-80aa-6355106d40d0.png)
 
-airflow@fbdff0ccc162:/opt/airflow$ airflow dags trigger majorityElement
-```
 
 ### The Data
 
