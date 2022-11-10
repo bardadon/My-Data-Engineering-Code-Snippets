@@ -9,9 +9,9 @@ Go to localhost:8080/
 ```
 docker exec -it majorityelement_airflow-scheduler_1 bash
 
-airflow@fbdff0ccc162:/opt/airflow$ airflow dags unpause user_processing
+airflow@fbdff0ccc162:/opt/airflow$ airflow dags unpause majorityElement
 
-airflow@fbdff0ccc162:/opt/airflow$ airflow dags trigger user_processing
+airflow@fbdff0ccc162:/opt/airflow$ airflow dags trigger majorityElement
 ```
 
 ### The Data
