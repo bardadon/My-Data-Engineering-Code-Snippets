@@ -20,7 +20,6 @@ Output: 2
 # Solving the problem with Airflow, MySQL, PostgreSQL, Python
 
 ### Deploy Airflow
-- Run
 ```
 docker-compose up -d
 ```
