@@ -1,19 +1,24 @@
-### Deploy Pipeline
+### Deploy Airflow
 - Run
 ```
 docker-compose up -d
 ```
 
-### Run the DAG
-- Go to localhost:8080/ and run the dag.
+### Run the Pipeline
+```
+bash run_etl.sh
+```
 
-![Screenshot 2022-11-10 152107](https://user-images.githubusercontent.com/65648983/201102655-cf511aad-b26c-4a2e-afed-3043e6a8ff82.png)
+### The Pipeline
+- Go to localhost:8080/ 
 
+![Screenshot 2022-11-11 120331](https://user-images.githubusercontent.com/65648983/201316793-7c606da0-d53c-424a-9421-74c684eae0b3.png)
 
 ### The Data
-
-Login to Postgres - Go to localhost:5050/
-![Screenshot 2022-11-10 130346](https://user-images.githubusercontent.com/65648983/201074865-91bb8629-1d2b-4450-bd5e-709f7911e5e9.png)
+- Login to MySQL - Go to localhost:3000/
+- Grab the IP of the MySQL server container and login
+- The data:
+![Screenshot 2022-11-11 120521](https://user-images.githubusercontent.com/65648983/201317095-979e6b96-350d-44c5-8cc8-a7b5516e3a7f.png)
 
 
 ### MySQL Solution
@@ -25,4 +30,4 @@ order by count(*) desc
 limit 1
 ```
 ### Output
-![Screenshot 2022-11-10 130715](https://user-images.githubusercontent.com/65648983/201075554-1b403eb2-146d-455f-ab32-5dbb246249ac.png)
+![Screenshot 2022-11-11 120556](https://user-images.githubusercontent.com/65648983/201317180-486295b4-4664-4df3-b402-63ce24e1264f.png)
