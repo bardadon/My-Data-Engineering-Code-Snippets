@@ -17,7 +17,7 @@ Input: nums = [2,2,1,1,1,2,2]
 Output: 2
 ```
 
-# Solving the problem with MySQL, PostgreSQL, Python
+# Solving the problem with Airflow, MySQL, PostgreSQL, Python
 
 ### Deploy Airflow
 - Run
@@ -33,9 +33,10 @@ bash run_etl.sh
 ### The Pipeline
 - Go to localhost:8080/ 
 
-![Screenshot 2022-11-11 120331](https://user-images.githubusercontent.com/65648983/201316793-7c606da0-d53c-424a-9421-74c684eae0b3.png)
+![Screenshot 2022-11-11 134322](https://user-images.githubusercontent.com/65648983/201334221-94b64835-2960-40bf-99e3-e2382d55efe0.png)
 
 ### Solutions:
 
+![Screenshot 2022-11-11 134846](https://user-images.githubusercontent.com/65648983/201334449-45a6b13b-b347-4fc1-a36c-98defdf65a15.png)
 
 
