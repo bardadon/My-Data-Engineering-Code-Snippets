@@ -25,4 +25,6 @@ order by count(*) desc
 limit 1
 ```
 ### Output
-![Screenshot 2022-11-10 130715](https://user-images.githubusercontent.com/65648983/201075554-1b403eb2-146d-455f-ab32-5dbb246249ac.png)
+```
+3
+```
