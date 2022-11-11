@@ -37,3 +37,6 @@ def majorityElement(nums):
         if value == max(count_dict.values()):
             return key
 ```
+```
+3
+```
