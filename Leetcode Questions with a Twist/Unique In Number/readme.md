@@ -33,3 +33,19 @@ done;
 
 ![unique_in_order_workflow](https://user-images.githubusercontent.com/65648983/204299453-0f9bf62d-2b09-45ba-a1b3-c239891f30d2.png)
 
+
+### Run the Data Pipeline
+```
+bash run_etl.sh
+```
+
+#### Input
+```
+unique_in_order('AAAABBBCCDAABBB')
+```
+
+#### Output
+```
+The Solution is: 
+ABCD
+```
