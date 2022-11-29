@@ -1,0 +1,33 @@
+[2022-11-29T18:06:55.728+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: hashtag_generator.extract_data_python manual__2022-11-29T18:06:52.471591+00:00 [queued]>
+[2022-11-29T18:06:55.738+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: hashtag_generator.extract_data_python manual__2022-11-29T18:06:52.471591+00:00 [queued]>
+[2022-11-29T18:06:55.738+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2022-11-29T18:06:55.738+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 1
+[2022-11-29T18:06:55.738+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2022-11-29T18:06:55.749+0000] {taskinstance.py:1383} INFO - Executing <Task(PythonOperator): extract_data_python> on 2022-11-29 18:06:52.471591+00:00
+[2022-11-29T18:06:55.754+0000] {standard_task_runner.py:55} INFO - Started process 3567 to run task
+[2022-11-29T18:06:55.757+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'hashtag_generator', 'extract_data_python', 'manual__2022-11-29T18:06:52.471591+00:00', '--job-id', '18', '--raw', '--subdir', 'DAGS_FOLDER/hashtag_generator.py', '--cfg-path', '/tmp/tmpklce6312']
+[2022-11-29T18:06:55.757+0000] {standard_task_runner.py:83} INFO - Job 18: Subtask extract_data_python
+[2022-11-29T18:06:55.806+0000] {task_command.py:376} INFO - Running <TaskInstance: hashtag_generator.extract_data_python manual__2022-11-29T18:06:52.471591+00:00 [running]> on host 1f1c6b02f2ce
+[2022-11-29T18:06:55.861+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=hashtag_generator
+AIRFLOW_CTX_TASK_ID=extract_data_python
+AIRFLOW_CTX_EXECUTION_DATE=2022-11-29T18:06:52.471591+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-11-29T18:06:52.471591+00:00
+[2022-11-29T18:06:55.861+0000] {hashtag_generator.py:17} INFO - Exporting query to file
+[2022-11-29T18:06:55.861+0000] {taskinstance.py:1851} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 175, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 193, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/hashtag_generator.py", line 18, in _extract_data
+    hook.copy_expert(copy_sql, filename='/tmp/solution.csv'
+NameError: name 'copy_sql' is not defined
+[2022-11-29T18:06:55.868+0000] {taskinstance.py:1406} INFO - Marking task as FAILED. dag_id=hashtag_generator, task_id=extract_data_python, execution_date=20221129T180652, start_date=20221129T180655, end_date=20221129T180655
+[2022-11-29T18:06:55.877+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 18 for task extract_data_python (name 'copy_sql' is not defined; 3567)
+[2022-11-29T18:06:55.888+0000] {local_task_job.py:159} INFO - Task exited with return code 1
+[2022-11-29T18:06:55.905+0000] {taskinstance.py:2623} INFO - 0 downstream tasks scheduled from follow-on schedule check

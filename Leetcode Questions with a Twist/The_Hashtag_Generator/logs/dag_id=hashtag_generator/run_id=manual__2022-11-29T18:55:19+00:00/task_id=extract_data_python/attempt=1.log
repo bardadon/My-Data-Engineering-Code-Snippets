@@ -1,0 +1,26 @@
+[2022-11-29T18:55:21.486+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: hashtag_generator.extract_data_python manual__2022-11-29T18:55:19+00:00 [queued]>
+[2022-11-29T18:55:21.494+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: hashtag_generator.extract_data_python manual__2022-11-29T18:55:19+00:00 [queued]>
+[2022-11-29T18:55:21.494+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2022-11-29T18:55:21.494+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 1
+[2022-11-29T18:55:21.494+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2022-11-29T18:55:21.505+0000] {taskinstance.py:1383} INFO - Executing <Task(PythonOperator): extract_data_python> on 2022-11-29 18:55:19+00:00
+[2022-11-29T18:55:21.510+0000] {standard_task_runner.py:55} INFO - Started process 5681 to run task
+[2022-11-29T18:55:21.512+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'hashtag_generator', 'extract_data_python', 'manual__2022-11-29T18:55:19+00:00', '--job-id', '30', '--raw', '--subdir', 'DAGS_FOLDER/hashtag_generator.py', '--cfg-path', '/tmp/tmpcsj5d6d_']
+[2022-11-29T18:55:21.513+0000] {standard_task_runner.py:83} INFO - Job 30: Subtask extract_data_python
+[2022-11-29T18:55:21.556+0000] {task_command.py:376} INFO - Running <TaskInstance: hashtag_generator.extract_data_python manual__2022-11-29T18:55:19+00:00 [running]> on host 1f1c6b02f2ce
+[2022-11-29T18:55:21.610+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=hashtag_generator
+AIRFLOW_CTX_TASK_ID=extract_data_python
+AIRFLOW_CTX_EXECUTION_DATE=2022-11-29T18:55:19+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-11-29T18:55:19+00:00
+[2022-11-29T18:55:21.610+0000] {hashtag_generator.py:17} INFO - Exporting query to file
+[2022-11-29T18:55:21.610+0000] {postgres.py:129} INFO - Running copy expert: COPY (SELECT * FROM hashtags) TO STDOUT WITH CSV HEADER, filename: /tmp/input_data.csv
+[2022-11-29T18:55:21.617+0000] {base.py:71} INFO - Using connection ID 'postgres' for task execution.
+[2022-11-29T18:55:21.621+0000] {python.py:177} INFO - Done. Returned value was: None
+[2022-11-29T18:55:21.628+0000] {taskinstance.py:1406} INFO - Marking task as SUCCESS. dag_id=hashtag_generator, task_id=extract_data_python, execution_date=20221129T185519, start_date=20221129T185521, end_date=20221129T185521
+[2022-11-29T18:55:21.644+0000] {local_task_job.py:159} INFO - Task exited with return code 0
+[2022-11-29T18:55:21.656+0000] {taskinstance.py:2623} INFO - 0 downstream tasks scheduled from follow-on schedule check
