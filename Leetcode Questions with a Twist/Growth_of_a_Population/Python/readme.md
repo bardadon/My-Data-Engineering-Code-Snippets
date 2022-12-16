@@ -28,5 +28,5 @@ Created <DagRun growth_of_population @ 2022-12-16T10:59:23+00:00: manual__2022-1
 
 Copying solution to local machine...
 
-**The Solution is: 94**
+__The Solution is: 94__
 ```
