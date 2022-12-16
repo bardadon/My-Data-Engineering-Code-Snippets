@@ -1,8 +1,12 @@
 ### Solution
 
-
 #### Dag
 ![python_growth](https://user-images.githubusercontent.com/65648983/208084970-ab92a604-0264-49a0-a266-4b39740a8b82.png)
+
+#### Deploy Airflow
+```
+bash start_airflow.sh
+```
 
 #### Running the Workflow
 
