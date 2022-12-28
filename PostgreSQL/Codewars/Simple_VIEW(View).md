@@ -1,5 +1,7 @@
 # SQL Basics: Simple VIEW
 
+## Question
+
 ```
 For this challenge you need to create a VIEW. This VIEW is used by a sales store to give out vouches to members who have spent over $1000 in departments that have brought in more than $10000 total ordered by the members id. The VIEW must be called members_approved_for_voucher then you must create a SELECT query using the view.
 Tables and relationship below:
@@ -10,11 +12,10 @@ resultant table schema
     email
     total_spending
 ```
+## Solution
 
 ```
 -- Create your VIEW statement here
-
-
 
 create or replace view members_approved_for_voucher as
 select 
@@ -51,7 +52,7 @@ order by m.id;
 select *
 from members_approved_for_voucher;
 ```
-
+## Output
 ```
 id	name	email	total_spending
 2	Ms. Roxanne Towne	noelia@bins.org	1117.66
