@@ -1,0 +1,21 @@
+select 
+    'Employee ' || ename || ' works as a ' || job as message
+from emp;
+
+/*
+"message"
+"Employee SMITH works as a CLERK"
+"Employee ALLEN works as a SALESMAN"
+"Employee WARD works as a SALESMAN"
+"Employee JONES works as a MANAGER"
+"Employee MARTIN works as a SALESMAN"
+"Employee BLAKE works as a MANAGER"
+"Employee CLARK works as a MANAGER"
+"Employee SCOTT works as a ANALYST"
+"Employee KING works as a PRESIDENT"
+"Employee TURNER works as a SALESMAN"
+"Employee ADAMS works as a CLERK"
+"Employee JAMES works as a CLERK"
+"Employee FORD works as a ANALYST"
+"Employee MILLER works as a CLERK"
+*/
