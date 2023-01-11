@@ -1,0 +1,28 @@
+select 
+    ename,
+    empno,
+    sal,
+    deptno,
+    sum(sal) over (order by sal) running_total
+from emp
+order by sal;
+
+/*
+"ename","empno","sal","deptno","running_total"
+"JAMES",7900,1140,30,"1140"
+"SMITH",7369,1152,20,"2292"
+"MARTIN",7654,1250,30,"4792"
+"WARD",7521,1250,30,"4792"
+"MILLER",7934,1300,10,"6092"
+"ADAMS",7876,1320,20,"7412"
+"TURNER",7844,1500,30,"8912"
+"ALLEN",7499,1600,30,"10512"
+"CLARK",7782,2450,10,"12962"
+"BLAKE",7698,2850,30,"15812"
+"JONES",7566,3570,20,"19382"
+"FORD",7902,3600,20,"22982"
+"SCOTT",7788,4320,20,"27302"
+"KING",7839,5000,10,"32302"
+*/
+
+
