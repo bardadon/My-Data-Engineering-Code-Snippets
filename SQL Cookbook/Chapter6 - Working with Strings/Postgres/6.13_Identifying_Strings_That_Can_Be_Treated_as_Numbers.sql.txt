@@ -1,0 +1,65 @@
+create or replace view V2 as
+    select replace(mixed,' ','') as mixed
+    from (
+    select substr(ename,1,2)||
+    cast(deptno as char(4))||
+    substr(ename,3,2) as mixed
+    from emp
+    where deptno = 10
+    union all
+    select cast(empno as char(4)) as mixed
+    from emp
+    where deptno = 20
+    union all
+    select ename as mixed
+    from emp
+    where deptno = 30
+    ) x;
+
+
+select * from V2;
+
+/*
+"mixed"
+"CL10AR"
+"KI10NG"
+"MI10LL"
+"7566"
+"7876"
+"7902"
+"7369"
+"7788"
+"ALLEN"
+"WARD"
+"MARTIN"
+"BLAKE"
+"TURNER"
+"JAMES"
+*/
+
+-- Solution
+
+select *
+FROM
+(select 
+    replace(
+        replace(
+            translate(mixed, 
+                    'ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+<>?/',
+                        rpad('-', length('ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+<>?/'))),
+            '-',
+            ''), ' ', '') as mixed_with_only_numbers
+from V2) as aaa
+where length(mixed_with_only_numbers) > 1;
+
+/*
+"mixed_with_only_numbers"
+"10"
+"10"
+"10"
+"7566"
+"7876"
+"7902"
+"7369"
+"7788"
+*/

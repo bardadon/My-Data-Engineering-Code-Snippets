@@ -1,0 +1,69 @@
+select 
+    a.ename,
+    substring(a.ename,iter.pos,1) as c
+from emp a, (select id as pos from t10) iter
+limit 5;
+
+/*
+Step one - 
+Breaking down the letters by creating a cartesian product of the 
+first letter of each name with the ids in the table t10.
+
+"ename","c"
+"ALLEN","A"
+"WARD","W"
+"MARTIN","M"
+"BLAKE","B"
+"CLARK","C"
+*/
+
+
+
+select 
+    a.ename,
+    substring(a.ename,iter.pos,1) as c
+from emp a, (select id as pos from t10) iter
+ORDER BY ename
+limit 5;
+
+/*
+Step two 
+
+"ename","c"
+
+"ADAMS","A"
+"ADAMS","D"
+"ADAMS","A"
+"ADAMS","M"
+"ADAMS","S"
+
+*/
+
+
+select 
+    ename,
+    string_agg(c, '' order by c)
+from
+(
+    select 
+        a.ename,
+        substring(a.ename,iter.pos,1) as c
+    from emp a, (select id as pos from t10) iter
+    ORDER BY ename
+) as aaa
+GROUP BY ename
+limit 5;
+
+/*
+Step three 
+ordering by the letters(the column c) and 
+grouping by the employee names
+
+"ename","string_agg"
+
+"ADAMS","AADMS"
+"ALLEN","AELLN"
+"BLAKE","ABEKL"
+"CLARK","ACKLR"
+"FORD","DFOR"
+*/

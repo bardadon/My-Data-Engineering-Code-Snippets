@@ -1,0 +1,27 @@
+select * from V2;
+
+/*
+NAME
+-------------------
+mo,larry,curly
+tina,gina,jaunita,regina,leena
+*/
+
+-- Solution:
+
+select name
+ from (
+ select iter.pos, split_part(src.name,',',iter.pos) as name
+ from (select id as pos from t10) iter,
+ (select cast(name as text) as name from v3) src
+ where iter.pos <=
+ length(src.name)-length(replace(src.name,',',''))+1
+ ) x
+ where pos = 2
+
+
+/*
+"name"
+"larry"
+"gina"
+*/
