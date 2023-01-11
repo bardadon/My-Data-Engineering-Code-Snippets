@@ -1,0 +1,9 @@
+select 
+    length('10,CLARK,MANAGER') as original_length,
+    length(REPLACE('10,CLARK,MANAGER', ',', '')) as length_without_commas,
+    (length('10,CLARK,MANAGER') - length(REPLACE('10,CLARK,MANAGER', ',', ''))) as number_of_commas
+
+/*
+"original_length","length_without_commas","number_of_commas"
+16,14,2
+*/

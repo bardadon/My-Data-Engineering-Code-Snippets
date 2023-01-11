@@ -1,0 +1,10 @@
+select 
+    'Stewie Griffin' as full_name,
+    SUBSTRING('Stewie Griffin', 1, 1) as first_letter,
+    SUBSTRING('Stewie Griffin', POSITION(' ' in 'Stewie Griffin') + 1, 1) as second_letter,
+    SUBSTRING('Stewie Griffin', 1, 1) || '. ' || SUBSTRING('Stewie Griffin', POSITION(' ' in 'Stewie Griffin') + 1, 1) as initials
+
+/*
+"full_name","first_letter","second_letter","initials"
+"Stewie Griffin","S","G","S. G"
+*/

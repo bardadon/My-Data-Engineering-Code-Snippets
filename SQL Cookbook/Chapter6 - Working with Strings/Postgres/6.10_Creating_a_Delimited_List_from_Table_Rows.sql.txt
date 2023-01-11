@@ -1,0 +1,16 @@
+-- STRING_AGG ( expression, separator [order_by_clause] )
+
+-- The PostgreSQL STRING_AGG() function is an aggregate function that concatenates a list of strings and places a separator between them. The function does not add the separator at the end of the string.
+
+select 
+    deptno,
+string_agg(ename, ',' order by empno) as emps
+from emp
+GROUP BY deptno
+
+/*
+"deptno","emps"
+10,"CLARK,KING,MILLER"
+20,"SMITH,JONES,SCOTT,ADAMS,FORD"
+30,"ALLEN,WARD,MARTIN,BLAKE,TURNER,JAMES"
+*/

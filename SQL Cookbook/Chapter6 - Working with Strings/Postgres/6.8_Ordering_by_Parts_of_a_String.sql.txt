@@ -1,0 +1,21 @@
+select ename
+from emp
+order by substring(ename, length(ename)-1, 2);
+
+/*
+"ename"
+"ALLEN"
+"MILLER"
+"TURNER"
+"JONES"
+"JAMES"
+"MARTIN"
+"BLAKE"
+"ADAMS"
+"KING"
+"FORD"
+"WARD"
+"CLARK"
+"SMITH"
+"SCOTT"
+*/

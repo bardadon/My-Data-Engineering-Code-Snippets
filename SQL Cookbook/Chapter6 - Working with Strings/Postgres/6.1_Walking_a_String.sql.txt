@@ -1,0 +1,13 @@
+select substr(e.ename,iter.pos,1) as C
+from 
+    (select ename from emp where ename = 'KING') as e,
+    (select id as pos from t10) as iter
+where iter.pos <= length(e.ename);
+
+/*
+"c"
+"K"
+"I"
+"N"
+"G"
+*/

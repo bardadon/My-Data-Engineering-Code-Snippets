@@ -1,0 +1,52 @@
+
+create or replace view V1 as
+    select ename as data
+    from emp
+    where deptno=10
+    union all
+    select ename||', $'|| cast(sal as char(4)) ||'.00' as data
+    from emp
+    where deptno=20
+    union all
+    select ename|| cast(deptno as char(4)) as data
+    from emp
+    where deptno=30;
+
+select * from V1;
+
+/*
+"data"
+"CLARK"
+"KING"
+"MILLER"
+"JONES, $3570.00"
+"ADAMS, $1320.00"
+"FORD, $3600.00"
+"SMITH, $1152.00"
+"SCOTT, $4320.00"
+"ALLEN30"
+"WARD30"
+"MARTIN30"
+"BLAKE30"
+"TURNER30"
+"JAMES30"
+*/
+
+
+select 
+    translate(data, '!@#$%^&*(),. ', rpad('-', length('!@#$%^&*(),. '), '-')) as data_only_letters
+from V1
+where translate(data, '!@#$%^&*(),. ', rpad('-', length('!@#$%^&*(),. '), '-')) not like '%-%'
+
+/*
+"data_only_letters"
+"CLARK"
+"KING"
+"MILLER"
+"ALLEN30"
+"WARD30"
+"MARTIN30"
+"BLAKE30"
+"TURNER30"
+"JAMES30"
+*/

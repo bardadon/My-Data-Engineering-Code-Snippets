@@ -1,0 +1,25 @@
+select 
+    sal as salary,
+    replace(cast(sal as char(4)), '0', '') as salary_without_0,
+    ename,
+    replace(translate(ename, 'AEIOU', 'AAAAA'), 'A', '') as names_with_vowels 
+from emp;
+
+/*
+"salary","salary_without_0","ename","names_with_vowels"
+1600,"16","ALLEN","LLN"
+1250,"125","WARD","WRD"
+1250,"125","MARTIN","MRTN"
+2850,"285","BLAKE","BLK"
+2450,"245","CLARK","CLRK"
+5000,"5","KING","KNG"
+1500,"15","TURNER","TRNR"
+1300,"13","MILLER","MLLR"
+3570,"357","JONES","JNS"
+1320,"132","ADAMS","DMS"
+3600,"36","FORD","FRD"
+1140,"114","JAMES","JMS"
+1152,"1152","SMITH","SMTH"
+4320,"432","SCOTT","SCTT"
+
+*/

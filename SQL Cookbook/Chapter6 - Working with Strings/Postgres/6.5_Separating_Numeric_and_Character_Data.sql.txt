@@ -1,0 +1,25 @@
+select 
+    replace(
+        translate(cast(data as varchar(30), '123456789', 'aaaaaaaaa'),
+        'a',
+        '')) as data_without_numbers,
+
+        replace(
+        translate(cast(data as varchar(30), 'ABCDEFGIJMKLNOPQRSTUVWXYZ', 'aaaaaaaaaaaaaaaaaa'),
+        'a',
+        '')) as data_without_letters
+
+
+/*
+data_without_numbers data_without_letters
+---------- ----------
+SMITH 800
+ALLEN 1600
+WARD 1250
+JONES 2975
+MARTIN 1250
+BLAKE 2850
+CLARK 2450
+SCOTT 3000
+KING 5000
+*/
