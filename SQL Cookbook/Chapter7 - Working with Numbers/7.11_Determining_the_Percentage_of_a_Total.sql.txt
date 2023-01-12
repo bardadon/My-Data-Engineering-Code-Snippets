@@ -1,0 +1,16 @@
+select 
+    empno,
+    sal as Salary,
+    (select sum(sal) from emp where deptno = 10) as salary_sum,
+    sal::float / (select sum(sal) from emp where deptno = 10) as percentile
+from emp
+where deptno = 10;
+
+/*
+"empno","salary","salary_sum","percentile"
+7782,2450,"8750",0.28
+7839,5000,"8750",0.5714285714285714
+7934,1300,"8750",0.14857142857142858
+*/
+
+

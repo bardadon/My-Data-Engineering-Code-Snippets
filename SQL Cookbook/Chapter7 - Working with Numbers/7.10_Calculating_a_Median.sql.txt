@@ -1,0 +1,24 @@
+select sal
+from emp
+where deptno = 20
+order by sal
+
+/*
+"sal"
+800
+800
+1152
+1320
+3570
+3600
+4320
+*/
+
+-- SOlution:
+select 
+    percentile_cont(0.5) within group(order by sal)
+from emp
+where deptno=20;
+
+
+-- 1320

@@ -1,0 +1,4 @@
+select 
+    avg(COALESCE(comm, 0)) as avg_commission
+from emp
+where deptno = 30;

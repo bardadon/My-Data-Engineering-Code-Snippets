@@ -1,0 +1,10 @@
+select 
+    'aul123f321',
+    (replace(
+    translate('aul123f321', 
+            'abcdefghijklmnopqrstuvwxyz',
+            rpad('a', length('abcdefghijklmnopqrstuvwxyz'), 'a')
+            ),
+    'a',
+    ''
+    ))::int as numbers_only

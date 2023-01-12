@@ -1,0 +1,31 @@
+
+select sal
+FROM
+(
+    select 
+        stddev(sal) * 3 as std_3,
+        avg(sal),
+        (avg(sal) + stddev(sal)) as upper_limit,
+        (avg(sal) - stddev(sal)) as lower_limit
+    from emp
+) as aaa, emp
+where 
+    sal <  upper_limit AND
+    sal > lower_limit
+order by sal desc;
+
+/*
+"sal"
+2850
+2450
+1600
+1500
+1320
+1300
+1250
+1250
+1152
+1140
+800
+800
+*/

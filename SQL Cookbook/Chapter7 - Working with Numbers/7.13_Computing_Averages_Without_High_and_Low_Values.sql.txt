@@ -1,0 +1,12 @@
+
+select avg(sal)
+from emp
+where 
+    sal not in (select min(sal) from emp where deptno = 30) and
+    sal not in (select max(sal) from emp where deptno = 30);
+
+
+/*
+"avg"
+"2136.5714285714285714"
+*/
